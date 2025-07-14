@@ -11,10 +11,8 @@ phases:
       - npm install --prefix client
   build:
     commands:
-      - echo Building React app...
-      - npm run build --prefix client
-      - echo Build complete.
-      - zip -r deploy.zip * .[^.]*
+      - echo Building the React app...
+      - npm run build
 artifacts:
   files:
     - deploy.zip
