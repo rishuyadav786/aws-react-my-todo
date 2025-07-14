@@ -5,14 +5,16 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - echo Installing root dependencies...
-      - npm install
-      - echo Installing client dependencies...
-      - npm install --prefix client
+      - echo Installing dependencies...
+      - npm ci --legacy-peer-deps
+
   build:
     commands:
       - echo Building the React app...
       - npm run build
+
 artifacts:
   files:
-    - deploy.zip
+    - '**/*'
+  base-directory: build
+  discard-paths: no
